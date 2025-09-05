@@ -1,7 +1,7 @@
 ﻿using Library.WordPress.Models;
 using System;
 
-namespace CLI.WordPress
+namespace CLI.WordPress //Add gitignore to our repository
 {
     public class Program
     {

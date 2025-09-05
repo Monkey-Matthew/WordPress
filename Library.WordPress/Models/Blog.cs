@@ -7,5 +7,12 @@
 
         public int Id {  get; set; } //Guid data type?
 
+        public override string ToString()
+        {
+            return $"{Title} - {Content}";
+
+        }
+
+
     }
 }
