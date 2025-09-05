@@ -8,7 +8,7 @@ namespace CLI.WordPress //Add gitignore to our repository
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to WordPress!");
-            List<Blog> blogPosts = new List<Blog?>();
+            List<Blog?> blogPosts = new List<Blog?>();
             bool cont = true;
             do
             {
@@ -27,6 +27,16 @@ namespace CLI.WordPress //Add gitignore to our repository
                         var blog = new Blog();
                         blog.Title = Console.ReadLine();
                         blog.Content = Console.ReadLine();
+                        var maxId = -1;
+                        if(blogPosts.Any())
+                        {
+                            maxId = blogPosts.Select(b => b?.Id ?? -1).Max();
+                        }
+                        else
+                        {
+                            maxId = 0;
+                        }
+                        blog.Id = ++maxId;
                         blogPosts.Add(blog);
                         break;
                     case "R":
