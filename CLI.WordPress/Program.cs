@@ -62,7 +62,7 @@ namespace CLI.WordPress //Add gitignore to our repository
                             var blogToDelete = blogPosts
                                 //dont consider null blogs
                                 .Where(b => b != null)
-                                //grab the first one that mathces the given id
+                                //grab the first one that mathces the blog given id
                                 .FirstOrDefault(b => (b?.Id ?? -1) == intSelection);
                             //remove it!
                             blogPosts.Remove(blogToDelete);
