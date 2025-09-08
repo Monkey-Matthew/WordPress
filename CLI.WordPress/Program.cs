@@ -51,6 +51,22 @@ namespace CLI.WordPress //Add gitignore to our repository
                         break;
                     case "D":
                     case "d":
+                        blogPosts.ForEach(Console.WriteLine);
+                        Console.WriteLine("Blog to Delete (Id): ");
+                        //get a seletion from the user
+                        var selection = Console.ReadLine();
+                        //make the selection an int
+                        if(int.TryParse(selection ?? "0", out int intSelection))
+                        {
+                            //get the blog to delete
+                            var blogToDelete = blogPosts
+                                //dont consider null blogs
+                                .Where(b => b != null)
+                                //grab the first one that mathces the given id
+                                .FirstOrDefault(b => (b?.Id ?? -1) == intSelection);
+                            //remove it!
+                            blogPosts.Remove(blogToDelete);
+                        }
                         break;
                     case "Q":
                     case "q":
