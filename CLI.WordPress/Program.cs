@@ -62,7 +62,7 @@ namespace CLI.WordPress //Add gitignore to our repository
                                     .Where(b => b != null)
                                     //grab the first one that mathces the blog given id
                                     .FirstOrDefault(b => (b?.Id ?? -1) == intSelection);
-                                //remove it!
+                                //remove it!!
                                 if(blogToUpdate != null)
                                 {
                                     blogToUpdate.Title = Console.ReadLine();
